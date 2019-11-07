@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>BookDesc</h1>
+<h2>{{bookInfo.name}}</h2>
+<h3>作者:{{bookInfo.author}}</h3>
+<h4>简介:</h4><br>
+<div class="fakeimg"><img src="{{bookInfo.pic_url}}"></img></div>
+{{bookInfo.desc}}</br>
+<br>
+<hr>
+<h4>介绍:</h4><br>
+{% for content in bookInfo.contents %}
+{{content}} </br>
+{% endfor %}
+
+<br>
+<hr>
+<h4>下载链接:</h4><br>
+{% for d in bookInfo.download %}
+<a href="{{d}}">下载地址<br>
+{% endfor %}
+<br>
+{% endblock %}
+<br>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="leaderboard">
+	<h1>GoodBoosk</h1>
+	<p>Descriptions</p>
+</div>
+<div class="row">
+	{% for type in types%}
+	<div class="col-md-3">
+		<h2>Type:{{ type.name }}</h2>
+		<p>Descriptions</p>
+		<p><a class="btn btn-success btn-large" href="{{type.url}}">ViewPage</a><p>
+	</div>
+	{% endfor %}
+</div>
+<div class="list-group">
+{% for book in books %}
+<a href="{{book.url}}" class="list-group-item list-group-item-action">{{book.name}} 作者:{{book.author}}</a>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

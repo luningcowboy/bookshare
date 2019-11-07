@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShareBook</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+  <script src="../static/libs/jquery.min.js"></script>
+  <script src="../static/libs/popper.min.js"></script>
+  <script src="../static/libs/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+{% block crumb%}
+<div class="navbar navbar-fixed-top">
+<ol class="breadcrumb">
+	<li class="breadcrumb-item active"><a href="{{url_for('index')}}">HOME</a></li>
+	{% for type in types%}
+	<li class="breadcrumb-item active"><a href="{{type.url}}">{{type.name}}</a></li>
+	{% endfor %}
+</ol>
+</div>
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block script%}
+{% endblock %}
+<footer>
+	<p>&copy; Company 2012</p>
+</footer>
+</div>
+</body>
+</html>
